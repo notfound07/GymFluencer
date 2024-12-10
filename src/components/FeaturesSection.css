@@ -1,0 +1,103 @@
+.features-section {
+    padding: 3rem 1rem 2rem 1rem;
+    background-color: #f7fafc;
+    text-align: center;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: orange;
+    margin-bottom: 2rem;
+}
+
+.features-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.features-grid {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 20px;
+    overflow-x: scroll; /* Allows scrolling */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+.features-grid::-webkit-scrollbar {
+    display: none; /* Hides scrollbar for Webkit-based browsers (Chrome, Safari, etc.) */
+}
+
+.feature-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 350px;
+    transition: transform 0.3s ease;
+    scroll-snap-align: start; /* Optional: ensures each card snaps into place */
+}
+
+.feature-card:hover {
+    scale: 1.05;
+    z-index: 10;
+}
+
+.feature-icon {
+    margin-bottom: 1rem;
+}
+
+.feature-image {
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.feature-description {
+    color: #4a5568;
+}
+
+.scroll-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 0.3s;
+}
+
+.scroll-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}

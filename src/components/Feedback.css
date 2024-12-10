@@ -1,0 +1,51 @@
+.feedback-container {
+    width: 100%;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin: 40px 0;
+  }
+  
+  .feedback-title {
+    text-align: center;
+    font-size: 2.5rem; /* Larger title */
+    color: #333;
+    margin-bottom: 30px; /* More space between title and feedback */
+  }
+  
+  .feedback-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .feedback-box {
+    background-color: #f9f9f9; /* Slightly off-white for the feedback box */
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px; /* Increased padding for a bigger box */
+    width: 30%; /* Make the box a bit larger, fit 3 in a row */
+    text-align: center;
+    transition: transform 0.3s ease;
+    min-height: 200px; /* Ensures the boxes have a minimum height */
+  }
+  
+  .feedback-box:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  .feedback-user {
+    font-size: 22px; /* Larger user name */
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 15px; /* Add space below user name */
+  }
+  
+  .feedback-comment {
+    font-size: 18px; /* Bigger comment text */
+    color: #555;
+    font-style: italic;
+    line-height: 1.6; /* Improve readability by increasing line height */
+  }
+  

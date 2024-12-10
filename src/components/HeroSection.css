@@ -1,0 +1,232 @@
+/* Hero Section */
+.hero-section {
+    position: block;
+    background-color: #f7fafc;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100%; 
+    width: 95.2%;
+    z-index: 1;
+    filter: blur(3px); /* Slight blur for a dreamy effect */
+    transform: scale(1.1); /* Slight zoom for a dynamic look */
+}
+
+.hero-image {
+    height: 100vh;
+    width: 100%;
+}
+
+.hero-content {
+    z-index: 2;
+    text-align: left; /* Align content to the left */
+    padding: 0 1rem; /* Keep some padding on the sides */
+    position: absolute;
+    top: 50%; /* Vertically center the content */
+    left: 8rem; /* Add some space from the left side */
+    transform: translateY(-50%); /* Center content vertically */
+    max-width: 700px; /* Limit the width to avoid text overflow */
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #e53e3e;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #c53030;
+}
+
+.hero-button1 {
+    padding: 0.75rem 1.5rem;
+    background-color: #36c747;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.hero-button1:hover {
+    background-color: #166d21;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    border: white 2px solid;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    backdrop-filter: blur(8px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(8px); /* For Safari support */
+}
+
+.navbar-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    padding-right: 50px;
+}
+
+.navbar-logo img {
+    padding-top: 5px;
+    height: 60px;
+    width: auto;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 30px;
+}
+
+/* Dropdown Styles */
+/* Dropdown Styles */
+.navbar-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar-link {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.navbar-link:hover {
+    color: #e53e3e;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    padding: 1rem;
+    min-width: 350px;
+    border-radius: 8px;
+    top: 100%;
+    opacity: 0;
+    transform: translateY(20px); /* Slight offset for smoother animation */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    pointer-events: none; /* Prevent hover effects when hidden */
+}
+
+.navbar-dropdown:hover .dropdown-content {
+    /* Visible position */
+    top: 100%;
+    opacity: 1;
+    transform: translateY(0); /* Reset offset */
+    pointer-events: auto; /* Allow interactions */
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 0.5rem 0;
+    gap: 1rem;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.dropdown-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+
+/* Scroll Arrow */
+.scroll-arrow {
+    position: absolute;
+    bottom: 20px; /* Distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem; /* Size of the arrow */
+    color: white; /* Arrow color */
+    animation: bounce 1.5s infinite; /* Add bounce animation */
+    cursor: pointer; /* Indicate it's clickable */
+    z-index: 10; /* Make sure it's above all other elements */
+}
+
+.scroll-arrow span {
+    display: inline-block;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
