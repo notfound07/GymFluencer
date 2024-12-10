@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos'; // Import AOS
+import 'aos/dist/aos.css'; // Import AOS CSS
 import './Faqs.css';
 
 const Faqs = () => {
@@ -35,13 +37,22 @@ const Faqs = () => {
     }
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+  }, []);
+
   return (
     <div className="faqs-container">
       <h1 className='faqs-heading'>FAQs</h1>
       <h2 className='faqs-title'>Find answers to your questions about the GymFluencer application, designed to enhance your fitness journey.</h2>
       <div className="faq-list">
         {faqs.map((faq, index) => (
-          <div key={index} className="faq-item">
+          <div
+            key={index}
+            className="faq-item"
+            data-aos="fade-up" // AOS fade-up animation
+            data-aos-delay={`${index * 100}`} // Stagger delay for each item
+          >
             <div className="faq-question" onClick={() => toggleAnswer(index)}>
               {faq.question}
               <i className={`faq-icon ${openIndex === index ? 'fa-caret-up' : 'fa-caret-down'}`}></i>

@@ -5,6 +5,8 @@ import Step4 from '../assets/Step4.webp';
 import Step1 from '../assets/Step1.webp';
 import Step2 from '../assets/Step2.jpg';
 import Step3 from '../assets/Step3.jpg';
+import AOS from 'aos'; // Import AOS
+import 'aos/dist/aos.css'; // Import AOS CSS
 
 const Step = () => {
     const [currentStep, setCurrentStep] = useState(0);
@@ -27,9 +29,13 @@ const Step = () => {
         setPopupContent(steps[index].description); // Update popup content based on clicked step
     };
 
+    useEffect(() => {
+        AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+      }, []);
+
     return (
         <div className="step-container">
-            <div className="steps">
+            <div className="steps" data-aos="fade-up">
                 {steps.map((step, index) => (
                     <div
                         key={index}
@@ -39,7 +45,7 @@ const Step = () => {
                     >
                         <div className="steps__step-name">{step.name}</div>
                         {index < currentStep && <div className="steps__connector"></div>}
-                        <div className="steps__step-number">{index + 1}</div>
+                        <div className="steps__step-number" >{index + 1}</div>
                     </div>
                 ))}
             </div>

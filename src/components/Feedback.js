@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos'; // Import AOS
+import 'aos/dist/aos.css'; // Import AOS CSS
 import './Feedback.css';
 
 const Feedback = () => {
@@ -17,12 +19,26 @@ const Feedback = () => {
     },
   ];
 
+  // Initialize AOS when component mounts
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duration of animation
+      easing: "ease-in-out", // Easing function for smoothness
+      once: true, // Ensures animation happens only once
+    });
+  }, []);
+
   return (
     <div className="feedback-container">
       <h2 className="feedback-title">What Users Say</h2>
       <div className="feedback-row">
         {feedbackData.map((feedback, index) => (
-          <div key={index} className="feedback-box">
+          <div
+            key={index}
+            className="feedback-box"
+            data-aos="fade-up" // Apply AOS animation
+            data-aos-delay={`${index * 100}`} // Add delay based on index
+          >
             <p className="feedback-user">{feedback.user}</p>
             <p className="feedback-comment">"{feedback.comment}"</p>
           </div>
