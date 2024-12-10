@@ -1,19 +1,8 @@
-import React, { useState, useEffect } from "react";
-import AOS from "aos"; // Import AOS
-import "aos/dist/aos.css"; // Import AOS CSS
+import React, { useState } from "react";
 import "./Join.css"; // Assuming you have a CSS file for styling
 
 const Join = () => {
     const [isSignup, setIsSignup] = useState(true);
-
-    // Initialize AOS when the component mounts
-    useEffect(() => {
-        AOS.init({
-            duration: 1000, // Duration of the animation
-            easing: "ease-in-out", // Easing function for smoothness
-            once: true, // Ensures animation happens only once
-        });
-    }, []);
 
     const toggleForm = () => {
         setIsSignup(!isSignup);
@@ -41,12 +30,7 @@ const Join = () => {
                     checked={!isSignup}
                     onChange={toggleForm}
                 />
-                
-                {/* Signup Form */}
-                <div
-                    className={`signup ${isSignup ? "active" : ""}`}
-                    data-aos="fade-up" // Apply AOS fade-up animation
-                >
+                <div className={`signup ${isSignup ? "active" : ""}`}>
                     <form onSubmit={handleSignup}>
                         <label htmlFor="chk" aria-hidden="true">Sign up</label>
                         <input type="text" name="username" placeholder="User Name" required />
@@ -57,11 +41,7 @@ const Join = () => {
                     </form>
                 </div>
 
-                {/* Login Form */}
-                <div
-                    className={`login ${!isSignup ? "active" : ""}`}
-                    data-aos="fade-up" // Apply AOS fade-up animation
-                >
+                <div className={`login ${!isSignup ? "active" : ""}`}>
                     <form onSubmit={handleLogin}>
                         <label htmlFor="chk" aria-hidden="true">Login</label>
                         <input type="email" name="email" placeholder="Email" required />
