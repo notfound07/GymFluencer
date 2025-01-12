@@ -1,4 +1,4 @@
-Here's an updated README tailored to match the repository structure of **GymFluencer**:
+Here's a README:
 
 ---
 
