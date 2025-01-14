@@ -2,7 +2,7 @@ Here's a README:
 
 ---
 
-# GymFluencer  
+# GymFluencer - Track Your Fitness Journey
 
 ### Overview  
 **GymFluencer** is a React-based fitness platform designed to provide free tools for tracking workouts, monitoring health, and improving overall well-being. It offers a seamless and responsive user experience for individuals looking to achieve their fitness goals with ease.  
